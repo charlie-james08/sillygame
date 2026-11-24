@@ -42,10 +42,3 @@ tr.me td{color:var(--c)}
 
 /* Easter egg look (name V) */
 :root[data-egg]{--a:#fcee0a;--b:#00f0ff;--c:#ff003c;--glow:0 0 22px rgba(252,238,10,.5);--tsh:3px 3px 0 #ff003c}
-
-/* Music player (bottom left) */
-#mp{position:fixed;left:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:6px;background:var(--panel);border:var(--bw) solid var(--a);border-radius:var(--r);box-shadow:var(--glow);padding:6px}
-.mp-b{padding:8px 10px;font-size:1em;text-align:center;min-width:40px;min-height:40px}
-.mp-n{font-size:.7em;color:var(--c);max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 4px}
-body{padding-bottom:80px}
-@media (max-width:520px){.mp-n{display:none}}
