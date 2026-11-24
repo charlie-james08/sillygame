@@ -1,0 +1,51 @@
+/* Neon Arcade palette - change the variables in :root to re-colour the whole site */
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0b0221;--bgi:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 2px,transparent 2px 4px),radial-gradient(ellipse at top,#2a0f6b,#0b0221 70%);--panel:#170a3d;--ink:#f4f0ff;--a:#22f0ff;--b:#ff2ec4;--c:#ffe600;--good:#39ff88;--bad:#ff4d5e;--btn:#2b1270;--input:#000;--onb:#fff;--onc:#000;--ong:#000;--f:"Press Start 2P","Courier New",monospace;--fs:11px;--bw:4px;--r:0;--glow:0 0 22px rgba(34,240,255,.45);--tsh:3px 3px 0 #ff2ec4;--cols:1fr;--pre:""}
+*{box-sizing:inherit}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:var(--fs);line-height:1.6}
+body{min-height:100vh;background:var(--bgi) var(--bg)}
+main{max-width:760px;margin:0 auto;padding:16px 14px 40px}
+h1{font-size:min(2.6em,6vw);text-align:center;color:var(--a);text-shadow:var(--tsh);margin:10px 0 4px;line-height:1.2}
+h2{font-size:1.3em;color:var(--c);margin:0 0 14px}
+.sub{text-align:center;color:var(--b);margin-bottom:16px;font-size:.9em}
+.box{background:var(--panel);border:var(--bw) solid var(--a);border-radius:var(--r);box-shadow:var(--glow);padding:18px;margin-bottom:22px}
+label{display:block;font-size:.9em;margin:12px 0 6px;color:var(--a)}
+input{width:100%;font:inherit;font-size:1.2em;padding:12px;background:var(--input);color:var(--good);border:var(--bw) solid var(--b);border-radius:var(--r)}
+.ages{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ages button{padding:12px 4px;font-size:.85em}
+button{font:inherit;color:var(--ink);background:var(--btn);border:var(--bw) solid var(--a);border-radius:var(--r);padding:14px;cursor:pointer;text-align:left}
+button:hover:not(:disabled),button:focus-visible{background:var(--b);color:var(--onb);outline:none}
+button.on{background:var(--c);color:var(--onc);border-color:var(--c)}
+.go{display:block;width:100%;text-align:center;background:var(--good);color:var(--ong);border-color:var(--good);margin-top:18px;font-size:1.2em}
+.go:hover:not(:disabled){background:var(--c);color:var(--onc)}
+button:disabled{cursor:default}
+.hud{display:flex;justify-content:space-between;gap:8px;font-size:.9em;color:var(--c);margin-bottom:10px;flex-wrap:wrap}
+.bar{height:14px;background:var(--input);border:var(--bw) solid var(--b);border-radius:var(--r);margin-bottom:16px;overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:var(--good);transition:width .25s linear}
+.q{font-size:1.15em;line-height:1.8;margin:0 0 18px}
+.ans{display:grid;grid-template-columns:var(--cols);gap:10px}
+.ans button::before{content:var(--pre)}
+.ans button.right{background:var(--good);color:var(--ong);border-color:var(--good)}
+.ans button.wrong{background:var(--bad);color:var(--ong);border-color:var(--bad)}
+.ans button.right::before{content:"✓ "}
+.ans button.wrong::before{content:"✗ "}
+.msg{min-height:24px;font-size:.9em;margin-top:14px;color:var(--a)}
+table{width:100%;border-collapse:collapse;font-size:.9em}
+th{color:var(--b);text-align:left;padding:6px 4px}
+td{padding:8px 4px;border-top:2px dashed var(--b)}
+tr.me td{color:var(--c)}
+.big{font-size:3em;color:var(--c);text-align:center;text-shadow:var(--tsh);margin:10px 0}
+.note{font-size:.75em;opacity:.75;margin-top:10px}
+.hide{display:none}
+@media (max-width:520px){.ans{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+
+/* Easter egg look (name V) */
+:root[data-egg]{--a:#fcee0a;--b:#00f0ff;--c:#ff003c;--glow:0 0 22px rgba(252,238,10,.5);--tsh:3px 3px 0 #ff003c}
+
+/* Music player (bottom left) */
+#mp{position:fixed;left:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:6px;background:var(--panel);border:var(--bw) solid var(--a);border-radius:var(--r);box-shadow:var(--glow);padding:6px}
+.mp-b{padding:8px 10px;font-size:1em;text-align:center;min-width:40px;min-height:40px}
+.mp-n{font-size:.7em;color:var(--c);max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 4px}
+body{padding-bottom:80px}
+@media (max-width:520px){.mp-n{display:none}}

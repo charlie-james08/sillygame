@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cyber Defender Arcade</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>CYBER DEFENDER</h1>
+<div class="sub">★ ARCADE QUIZ ★</div>
+
+<section id="start" class="box">
+  <h2>INSERT COIN</h2>
+  <label for="nm">PLAYER NAME</label>
+  <input id="nm" maxlength="10" placeholder="ENTER NAME" autocomplete="off">
+  <label>CHOOSE YOUR LEVEL</label>
+  <div class="ages" id="ages"></div>
+  <button class="go" id="play">▶ PLAY</button>
+  <div class="msg" id="smsg"></div>
+</section>
+
+<section id="game" class="box hide">
+  <div class="hud"><span id="qn"></span><span id="tm"></span><span id="sc"></span></div>
+  <div class="bar"><i id="fill"></i></div>
+  <p class="q" id="q"></p>
+  <div class="ans" id="ans"></div>
+  <div class="msg" id="gmsg"></div>
+</section>
+
+<section id="end" class="box hide">
+  <h2>GAME OVER</h2>
+  <div class="big" id="final"></div>
+  <div class="msg" id="emsg" style="text-align:center"></div>
+  <button class="go" id="again">▶ PLAY AGAIN</button>
+</section>
+
+<section class="box">
+  <h2>★ HIGH SCORES ★</h2>
+  <table><thead><tr><th>#</th><th>NAME</th><th>LVL</th><th>SCORE</th></tr></thead><tbody id="lb"></tbody></table>
+  <div class="note" id="lbnote"></div>
+</section>
+</main>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
